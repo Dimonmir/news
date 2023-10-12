@@ -18,7 +18,21 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@features/*": ["src/features/*"],
+      "@ui/*": ["src/ui/*"],
+      "@api/*": ["src/api/*"],
+      "@shared/*": ["src/shared/*"],
+      "@pages/*": ["src/pages/*"],
+      "@widgets/*": ["src/widgets/*"],
+      "@entities/*": ["src/entities/*"],
+      "@public/*": ["public/*"],
+      "@*": ["src/*"]
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
