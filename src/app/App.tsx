@@ -4,6 +4,7 @@ import { FC, ReactNode } from 'react';
 import { RouterProvider } from 'react-router-dom';
 import { customRoutes } from './router/routes';
 import GlobalStyle from './styles/theme/GlobalStyle';
+import { Global } from '@emotion/react';
 
 interface IWithProviders {
   children?: ReactNode;
@@ -12,7 +13,7 @@ interface IWithProviders {
 const App: FC<IWithProviders> = ({ children }) => {
   return (
     <ThemeProvider theme={customTheme}>
-      <GlobalStyle />
+      <Global styles={GlobalStyle} />
       <RouterProvider router={customRoutes} />
     </ThemeProvider>
   );

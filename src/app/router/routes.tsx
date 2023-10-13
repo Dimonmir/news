@@ -10,13 +10,9 @@ export const customRoutes = createBrowserRouter([
     errorElement: <NotFoundPage />,
     children: [
       {
-        path: 'post',
+        path: '/',
         element: <MainPage />,
       },
-      // {
-      //   path: '*',
-      //   element: <NotFoundPage />,
-      // },
     ],
   },
 ]);

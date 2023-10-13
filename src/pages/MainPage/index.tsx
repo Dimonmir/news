@@ -1,5 +1,5 @@
 const MainPage = () => {
-  return <>fds</>;
+  return <div>fds</div>;
 };
 
 export default MainPage;

@@ -1,10 +1,10 @@
-import styled, { withTheme } from 'styled-components';
+import { styled } from '@mui/system';
 
-const SContainer = styled.div`
-  padding: 20px 0;
-  display: flex;
-  justify-content: center;
-  background-color: ${(props) => props.theme.palette.primary.main};
-`;
-
-export default withTheme(SContainer);
+export const SContainer = styled('div')(({ theme }) => ({
+  padding: '20px 0',
+  display: 'flex',
+  justifyContent: 'center',
+  fontWeight: 'bold',
+  color: theme.palette.third.light,
+  backgroundColor: theme.palette.primary.main,
+}));

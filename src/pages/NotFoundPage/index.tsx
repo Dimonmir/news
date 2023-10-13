@@ -20,7 +20,7 @@ const NotFoundPage = () => {
       <div className="contant_box_404">
         <h3 className="h2">Что-то пошла не так</h3>
 
-        <p>Кажется мы что-то напутали! Давай отматает все обратно.</p>
+        <p>Кажется мы что-то напутали! Давай отмотает все обратно.</p>
 
         <Button variant="contained" onClick={handleClick}>
           Вернутся на главную
