@@ -1,4 +1,4 @@
-import { Category, Entries } from '@entities';
+import { Category, VirtualizedList } from '@entities';
 import { SMainPage } from './mainPage.styles';
 import { FC, useEffect, useState } from 'react';
 import { getCategories, getEntries } from '@shared/api';
@@ -38,6 +38,16 @@ const MainPage: FC = () => {
 
   const handleDeleteClick = (str: string) => {
     setIgnore(str);
+    getEntries(sort.join(','), [...ignore, str])
+      .then((data) => {
+        setEntries(data?.entries!);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        setLoader(false);
+      });
   };
 
   const handleAciveClick = (str: string) => {
@@ -90,28 +100,26 @@ const MainPage: FC = () => {
         <Box className="containerLoader">
           <CircularProgress />
         </Box>
+      ) : entries ? (
+        <VirtualizedList data={entries} onDelete={handleDeleteClick} />
       ) : (
-        <div className="ContainerEntries">
-          {entries ? (
-            entries.map((item, index) => (
-              <Entries
-                API={item.API}
-                Category={item.Category}
-                Description={item.Description}
-                Auth={item.Auth}
-                Cors={item.Cors}
-                HTTPS={item.HTTPS}
-                Link={item.Link}
-                onDelete={handleDeleteClick}
-                key={index}
-              />
-            ))
-          ) : (
-            <Box className="containerLoader">
-              <p>Ничего не найдено. Попробуйте настроить другие фильтры</p>
-            </Box>
-          )}
-        </div>
+        // <VirtualizedList data={entries} containerHeight={600} itemHeight={400} />
+        // entries.map((item, index) => (
+        //   <Entries
+        //     API={item.API}
+        //     Category={item.Category}
+        //     Description={item.Description}
+        //     Auth={item.Auth}
+        //     Cors={item.Cors}
+        //     HTTPS={item.HTTPS}
+        //     Link={item.Link}
+        //     onDelete={handleDeleteClick}
+        //     key={index}
+        //   />
+        // ))
+        <Box className="containerLoader">
+          <p>Ничего не найдено. Попробуйте настроить другие фильтры</p>
+        </Box>
       )}
     </SMainPage>
   );

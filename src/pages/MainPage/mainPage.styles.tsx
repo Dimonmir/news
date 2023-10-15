@@ -11,12 +11,6 @@ export const SMainPage = styled.div`
     flex-wrap: wrap;
     gap: 5px;
   }
-  .ContainerEntries {
-    display: grid;
-    width: 100%;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-  }
 
   .containerLoader {
     display: flex;

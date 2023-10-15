@@ -1,4 +1,5 @@
 import Category from './Category';
 import Entries from './Entries';
+import { VirtualizedList } from './VirtualizedList';
 
-export { Category, Entries };
+export { Category, Entries, VirtualizedList };
