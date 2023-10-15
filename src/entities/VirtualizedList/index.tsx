@@ -3,13 +3,6 @@ import { FC, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState 
 import { Entries } from '..';
 import { Box, CircularProgress } from '@mui/material';
 import { ContainerList } from './virtualizedList.styled';
-import { useStockStore } from '@app/store/store';
-
-const createItems = () =>
-  Array.from({ length: 10_000 }, (_, index) => ({
-    id: Math.random().toString(36).slice(2),
-    text: String(index),
-  }));
 
 interface UseFixedSizeListProps {
   itemsCount: number;
@@ -128,7 +121,7 @@ interface IVirtualizedList {
 }
 
 export const VirtualizedList: FC<IVirtualizedList> = ({ data, onDelete }) => {
-  const [listItems, setListItems] = useState(data);
+  const [listItems] = useState(data);
   const scrollElementRef = useRef<HTMLDivElement>(null);
 
   const { isScrolling, virtualItems, totalHeight } = useFixedSizeList({

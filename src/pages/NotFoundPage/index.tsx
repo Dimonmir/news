@@ -1,4 +1,4 @@
-import { Button, Container } from '@mui/material';
+import { Button } from '@mui/material';
 import { SNotFound } from './NotFoundPage.styles';
 import { useNavigate } from 'react-router-dom';
 

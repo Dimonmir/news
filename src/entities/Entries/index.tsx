@@ -2,7 +2,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { IEntries } from '@shared/model';
 import { FC, useState } from 'react';
 import { SCard } from './entries.styled';
-import { Box, CircularProgress, IconButton, Skeleton } from '@mui/material';
+import { IconButton, Skeleton } from '@mui/material';
 
 interface IEntriesProps extends IEntries {
   onDelete: (label: string) => void;
