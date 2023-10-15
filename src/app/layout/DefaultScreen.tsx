@@ -8,7 +8,7 @@ const DefaultScreen = () => {
   return (
     <SLayout>
       <Header />
-      <Container>
+      <Container maxWidth="xl">
         <Outlet />
       </Container>
     </SLayout>
