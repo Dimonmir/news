@@ -8,14 +8,13 @@ interface IEntriesProps extends IEntries {
   onDelete: (label: string) => void;
 }
 
-const Entries: FC<IEntriesProps> = ({ API, Link, Category, Description, onDelete }) => {
+const Entries: FC<IEntriesProps> = ({ API, Link, Category, Img, Description, onDelete }) => {
   const [show, setShow] = useState<boolean>(true);
-
-  const backgoundRand = '/background' + Math.floor(Math.random() * 7 + 1) + '.jpg';
 
   const handleClick = (label: string) => {
     setShow(false);
     onDelete(label);
+    window.location.reload();
   };
 
   return (
@@ -30,7 +29,7 @@ const Entries: FC<IEntriesProps> = ({ API, Link, Category, Description, onDelete
               <DeleteIcon />
             </IconButton>
           </div>
-          <img src={backgoundRand} alt="photo" />
+          <img src={Img} alt="photo" />
           <div className="card__desc">{Description}</div>
 
           <div className="card__flexBox">

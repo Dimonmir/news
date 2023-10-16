@@ -141,9 +141,8 @@ export const VirtualizedList: FC<IVirtualizedList> = ({ data, onDelete }) => {
       }}
     >
       <ContainerList style={{ height: totalHeight }}>
-        {virtualItems.map((virtualItem) => {
+        {virtualItems.map((virtualItem, index) => {
           const item = listItems[virtualItem.index]!;
-
           return (
             <div
               style={{
@@ -155,6 +154,7 @@ export const VirtualizedList: FC<IVirtualizedList> = ({ data, onDelete }) => {
                 padding: '6px 12px',
                 width: '50%',
               }}
+              key={index}
             >
               {isScrolling ? (
                 <Box className="containerLoader">
@@ -169,6 +169,7 @@ export const VirtualizedList: FC<IVirtualizedList> = ({ data, onDelete }) => {
                   Cors={item.Cors}
                   HTTPS={item.HTTPS}
                   Link={item.Link}
+                  Img={item.Img}
                   onDelete={onDelete}
                 />
               )}

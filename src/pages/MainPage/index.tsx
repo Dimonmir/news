@@ -23,7 +23,7 @@ const MainPage: FC = () => {
 
     getEntries(sort.join(','), ignore)
       .then((data) => {
-        setEntries(data?.entries!);
+        setEntries(data!);
       })
       .catch((error) => {
         console.log(error);
@@ -40,7 +40,8 @@ const MainPage: FC = () => {
     setIgnore(str);
     getEntries(sort.join(','), [...ignore, str])
       .then((data) => {
-        setEntries(data?.entries!);
+        console.log(data);
+        setEntries(data!);
       })
       .catch((error) => {
         console.log(error);
@@ -55,7 +56,7 @@ const MainPage: FC = () => {
     setSort(str);
     getEntries(sort.join(','), ignore)
       .then((data) => {
-        setEntries(data?.entries!);
+        setEntries(data!);
       })
       .catch((error) => {
         console.log(error);
@@ -71,7 +72,7 @@ const MainPage: FC = () => {
     const newSort = sort.filter((item) => item !== str);
     getEntries(newSort.join(','), ignore)
       .then((data) => {
-        setEntries(data?.entries!);
+        setEntries(data!);
         console.log(sort);
       })
       .catch((error) => {

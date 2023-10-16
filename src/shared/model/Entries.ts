@@ -11,6 +11,7 @@ interface IEntries {
   Description: string;
   HTTPS: boolean;
   Link: string;
+  Img: string;
 }
 
 export { type IGetEntries, type IEntries };
