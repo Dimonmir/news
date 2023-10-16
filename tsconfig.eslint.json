@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json", // Расширение основной конфигурации TypeScript (если необходимо)
+  "compilerOptions": {
+    "target": "ES6", // Версия ECMAScript, на которую компилировать код
+    "module": "CommonJS", // Система модулей
+    "strict": true, // Включить строгую проверку типов
+    "jsx": "react", // Для файлов с JSX
+    "esModuleInterop": true // Включить интероперабельность между типами модулей
+    // Другие параметры, включая noImplicitAny, noUnusedLocals, noUnusedParameters и другие
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"], // Пути к исходным файлам TypeScript, которые должны быть включены
+  "exclude": ["node_modules", "build", "dist"], // Пути, которые нужно исключить из проверки
+  "files": ["jest.config.js"]
+}

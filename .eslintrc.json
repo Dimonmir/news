@@ -54,8 +54,9 @@
       "jsx": true
     },
     "ecmaVersion": "latest",
-    "project": "./tsconfig.json",
-    "sourceType": "module"
+    // "project": "./tsconfig.json",
+    "sourceType": "module",
+    "project": "./tsconfig.eslint.json"
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
@@ -108,6 +109,7 @@
         "exports": "only-multiline"
       }
     ],
+    "ignorePatterns": ["jest.config.js"],
     "no-restricted-imports": [
       "error",
       {
